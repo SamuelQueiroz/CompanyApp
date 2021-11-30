@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-
+import { Company } from '../../models/company.model';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CompanyService } from '../../services/company.service';
 
@@ -10,6 +10,8 @@ import { CompanyService } from '../../services/company.service';
   styleUrls: ['./company-dialog.component.scss']
 })
 export class CompanyDialogComponent implements OnInit {
+
+  company: Company = new Company();
 
   public companyForm = new FormGroup({
     id: new FormControl(''),
