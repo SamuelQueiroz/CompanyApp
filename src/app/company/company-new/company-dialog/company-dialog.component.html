@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>New Company</h1>
+
+<div mat-dialog-content>
+  <form class="form" [formGroup]="companyForm">
+    <mat-form-field class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" name="name">{{company.name}}
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+    <mat-label>CNPJ</mat-label>
+    <input matInput formControlName="cnpj" name="cnpj">{{company.cnpj}}
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+    <mat-label>Address</mat-label>
+    <input matInput formControlName="endereco" name="endereco">{{company.endereco}}
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" name="email">{{company.email}}
+    </mat-form-field>
+
+
+  </form>
+</div>
+
+<div mat-dialog-actions class="button-row">
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+  <button mat-button (click)="cancel()">Cancel</button>
+</div>

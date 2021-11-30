@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+  <span class="spacer">COMPANY MANAGER</span>
+  <button mat-raised-button (click)="addCompany()"><mat-icon>add</mat-icon></button>
+  <button mat-raised-button (click)="editCompany()"><mat-icon>edit</mat-icon></button>
+  <button mat-raised-button (click)="eraseCompany()"><mat-icon>delete</mat-icon></button>
+  <button mat-raised-button (click)="refresCompany()"><mat-icon>refresh</mat-icon></button>
+</mat-toolbar>
+
+<mat-card>
+  <table mat-table [dataSource]="company" class="mat-elevation-z8">
+  <!-- Cod Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Cod. </th>
+    <td mat-cell *matCellDef="let company"> {{company.id}} </td>
+  </ng-container>
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let company"> {{company.name}} </td>
+  </ng-container>
+  <!-- CNPJ Column -->
+  <ng-container matColumnDef="cnpj">
+    <th mat-header-cell *matHeaderCellDef> CNPJ </th>
+    <td mat-cell *matCellDef="let company"> {{company.cnpj}} </td>
+  </ng-container>
+  <!-- Endereco Column -->
+  <ng-container matColumnDef="endereco">
+    <th mat-header-cell *matHeaderCellDef> Endereco </th>
+    <td mat-cell *matCellDef="let company"> {{company.endereco}} </td>
+  </ng-container>
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let company"> {{company.email}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row (click)="rowClicked(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
+
+
